@@ -1,21 +1,66 @@
+import { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Button, ButtonGroup } from '@material-ui/core/'
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward'
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import { Button, ButtonGroup, Checkbox, FormControlLabel } from '@material-ui/core/'
+import { ArrowForward, ArrowBack, ToggleOff, ToggleOn } from '@material-ui/icons/'
+
+import React from 'react'
+
+const CheckboxExample = () => {
+
+  const [checked, setChecked] = useState(true)
+
+  return (
+    <FormControlLabel
+      control = {
+        <Checkbox 
+        checked={checked}
+        onChange={((event) => {
+          setChecked(event.target.checked)
+        })}
+      />
+      }
+      label="Checkbox Test"
+    />
+  )
+}
+
+const CheckboxIconExample = () => {
+
+  const [checked, setChecked] = useState(true)
+
+  return (
+    <FormControlLabel
+      control = {
+        <Checkbox 
+        checked={checked}
+        icon={<ToggleOff />}
+        checkedIcon={<ToggleOn />}
+        onChange={((event) => {
+          setChecked(event.target.checked)
+        })}
+      />
+      }
+      label="Checkbox Icon Test"
+    />
+  )
+}
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <CheckboxExample />
+        <CheckboxIconExample />
         <Button
-          startIcon={<ArrowForwardIcon />}
+          startIcon={<ArrowForward />}
           variant="contained"
           color="default"
           // style={{
           //   fontSize: 26
           // }}
-          endIcon={<ArrowBackIcon />}
+          endIcon={<ArrowBack />}
           >
           Click Me
         </Button>
