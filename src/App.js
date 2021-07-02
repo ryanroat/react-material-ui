@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Button from '@material-ui/core/Button'
+import { Button, ButtonGroup } from '@material-ui/core/'
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward'
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
@@ -11,7 +11,7 @@ function App() {
         <Button
           startIcon={<ArrowForwardIcon />}
           variant="contained"
-          color="primary"
+          color="default"
           // style={{
           //   fontSize: 26
           // }}
@@ -19,6 +19,18 @@ function App() {
           >
           Click Me
         </Button>
+        <ButtonGroup variant="contained">
+          <Button
+            color="primary"
+          >
+          left button
+          </Button>
+          <Button
+            color="secondary"
+          >
+          right button
+          </Button>
+        </ButtonGroup>
         <img src={logo} className="App-logo" alt="logo" />
       </header>
     </div>
