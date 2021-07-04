@@ -3,7 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import { Button, ButtonGroup, Checkbox, FormControlLabel, TextField } from '@material-ui/core/'
 import { ArrowForward, ArrowBack, ToggleOff, ToggleOn } from '@material-ui/icons/'
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles, ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
+import { orange, green } from '@material-ui/core/colors'
 
 const useStyles = makeStyles({
   root: {
@@ -26,6 +27,16 @@ const ButtonStyled = () => {
   )
 }
 
+const themeName = createMuiTheme({
+  palette: {
+    primary: {
+      main: orange[500],
+    },
+    secondary: {
+      main: green[400],
+    }
+  }
+})
 
 const CheckboxExample = () => {
 
@@ -70,48 +81,50 @@ const CheckboxIconExample = () => {
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <TextField
-          variant="outlined"  
-          autoFocus={true}
-          fullWidth={true}
-          helperText="This TextField is autoFocused."
-          label="outlined fullWidth TextField"
-          placeholder="Type anything"
+    <ThemeProvider theme={themeName}>
+      <div className="App">
+        <header className="App-header">
+          <TextField
+            variant="outlined"  
+            autoFocus={true}
+            fullWidth={true}
+            helperText="This TextField is autoFocused."
+            label="outlined fullWidth TextField"
+            placeholder="Type anything"
+            />
+          <TextField
+            type="date"
           />
-        <TextField
-          type="date"
-        />
-        <CheckboxExample />
-        <CheckboxIconExample />
-        <Button
-          startIcon={<ArrowForward />}    
-          variant="contained"
-          color="default"
-          // style={{
-          //   fontSize: 26
-          // }}
-          endIcon={<ArrowBack />}
-          >
-          Click Me
-        </Button>
-        <ButtonGroup variant="contained">
+          <CheckboxExample />
+          <CheckboxIconExample />
           <Button
-            color="primary"
-          >
-          left button
+            startIcon={<ArrowForward />}    
+            variant="contained"
+            color="default"
+            // style={{
+            //   fontSize: 26
+            // }}
+            endIcon={<ArrowBack />}
+            >
+            Click Me
           </Button>
-          <Button
-            color="secondary"
-          >
-          right button
-          </Button>
-        </ButtonGroup>
-        <ButtonStyled />
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-    </div>
+          <ButtonGroup variant="contained">
+            <Button
+              color="primary"
+            >
+            left button
+            </Button>
+            <Button
+              color="secondary"
+            >
+            right button
+            </Button>
+          </ButtonGroup>
+          <ButtonStyled />
+          <img src={logo} className="App-logo" alt="logo" />
+        </header>
+      </div>
+    </ThemeProvider>
   );
 }
 
