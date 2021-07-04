@@ -1,14 +1,15 @@
 import { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Button, ButtonGroup, Checkbox, FormControlLabel, TextField } from '@material-ui/core/'
+import { Button, ButtonGroup, Checkbox, FormControlLabel, TextField, Typography, Container, Paper, Grid } from '@material-ui/core/'
 import { ArrowForward, ArrowBack, ToggleOff, ToggleOn } from '@material-ui/icons/'
 import { makeStyles, ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import { orange, green } from '@material-ui/core/colors'
 import 'fontsource-roboto'
 // import '@fontsource/acme'
 
-import Typography from '@material-ui/core/Typography';
+// import Typography from '@material-ui/core/Typography';
+// import Container from '@material-ui/core/Container';
 
 const useStyles = makeStyles({
   root: {
@@ -97,57 +98,76 @@ const CheckboxIconExample = () => {
 function App() {
   return (
     <ThemeProvider theme={themeName}>
-      <div className="App">
-        <header className="App-header">
-          <Typography variant="h1" component="h1">
-            Welcome to MUI
-          </Typography>
-          <Typography variant="h2" component="h2">
-            Learning Material UI for React
-          </Typography>
-          <Typography variant="subtitle">
-            demos of some Material UI components
-          </Typography>
-          <TextField className='text-input'
-            variant="outlined"  
-            autoFocus={true}
-            fullWidth={true}
-            helperText="This TextField is autoFocused."
-            label="outlined fullWidth TextField"
-            placeholder="Type anything"
+      <Container maxWidth="xs">
+        <div className="App">
+          <header className="App-header">
+            <Typography variant="h1" component="h1">
+              Welcome to MUI
+            </Typography>
+            <Typography variant="h2" component="h2">
+              Learning Material UI for React
+            </Typography>
+            <Typography className="subtitle" variant="subtitle">
+              demos of some Material UI components
+            </Typography>
+            <Grid container spacing={3} justify="center">
+              <Grid item>
+                <Paper style={{ height: 75, width: 50 }} />
+              </Grid>
+              <Grid item>
+                <Paper style={{ height: 75, width: 50 }} />
+              </Grid>
+              <Grid item>
+                <Paper style={{ height: 75, width: 50 }} />
+              </Grid>
+              <Grid item>
+                <Paper style={{ height: 75, width: 50 }} />
+              </Grid>
+              <Grid item>
+                <Paper style={{ height: 75, width: 50 }} />
+              </Grid>
+            </Grid>
+            <TextField className='text-input'
+              variant="outlined"  
+              autoFocus={true}
+              fullWidth={true}
+              helperText="This TextField is autoFocused."
+              label="outlined fullWidth TextField"
+              placeholder="Type anything"
+              />
+            <TextField
+              type="date"
             />
-          <TextField
-            type="date"
-          />
-          <CheckboxExample />
-          <CheckboxIconExample />
-          <Button
-            startIcon={<ArrowForward />}    
-            variant="contained"
-            color="default"
-            // style={{
-            //   fontSize: 26
-            // }}
-            endIcon={<ArrowBack />}
-            >
-            Click Me
-          </Button>
-          <ButtonGroup variant="contained">
+            <CheckboxExample />
+            <CheckboxIconExample />
             <Button
-              color="primary"
-            >
-            left button
+              startIcon={<ArrowForward />}    
+              variant="contained"
+              color="default"
+              // style={{
+              //   fontSize: 26
+              // }}
+              endIcon={<ArrowBack />}
+              >
+              Click Me
             </Button>
-            <Button
-              color="secondary"
-            >
-            right button
-            </Button>
-          </ButtonGroup>
-          <ButtonStyled />
-          <img src={logo} className="App-logo" alt="logo" />
-        </header>
-      </div>
+            <ButtonGroup variant="contained">
+              <Button
+                color="primary"
+              >
+              left button
+              </Button>
+              <Button
+                color="secondary"
+              >
+              right button
+              </Button>
+            </ButtonGroup>
+            <ButtonStyled />
+            <img src={logo} className="App-logo" alt="logo" />
+          </header>
+        </div>
+      </Container>
     </ThemeProvider>
   );
 }
