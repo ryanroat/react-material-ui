@@ -98,7 +98,7 @@ const CheckboxIconExample = () => {
 function App() {
   return (
     <ThemeProvider theme={themeName}>
-      <Container maxWidth="xs">
+      <Container maxWidth="lg">
         <div className="App">
           <header className="App-header">
             <Typography variant="h1" component="h1">
@@ -111,20 +111,17 @@ function App() {
               demos of some Material UI components
             </Typography>
             <Grid container spacing={3} justify="center">
-              <Grid item>
-                <Paper style={{ height: 75, width: 50 }} />
+              <Grid item xs={12} sm={6} md={3} lg={3}>
+                <Paper style={{ height: 75, width: '80%', margin: 'auto' }} />
               </Grid>
-              <Grid item>
-                <Paper style={{ height: 75, width: 50 }} />
+              <Grid item xs={12} sm={6} md={3} lg={3}>
+                <Paper style={{ height: 75, width: '80%', margin: 'auto' }} />
               </Grid>
-              <Grid item>
-                <Paper style={{ height: 75, width: 50 }} />
+              <Grid item xs={12} sm={6} md={3} lg={3}>
+                <Paper style={{ height: 75, width: '80%', margin: 'auto' }} />
               </Grid>
-              <Grid item>
-                <Paper style={{ height: 75, width: 50 }} />
-              </Grid>
-              <Grid item>
-                <Paper style={{ height: 75, width: 50 }} />
+              <Grid item xs={12} sm={6} md={3} lg={3}>
+                <Paper style={{ height: 75, width: '80%', margin: 'auto' }} />
               </Grid>
             </Grid>
             <TextField className='text-input'
