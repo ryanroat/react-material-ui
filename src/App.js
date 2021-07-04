@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Button, ButtonGroup, Checkbox, FormControlLabel, TextField, Typography, Container, Paper, Grid } from '@material-ui/core/'
-import { ArrowForward, ArrowBack, ToggleOff, ToggleOn } from '@material-ui/icons/'
+import { Button, ButtonGroup, Checkbox,
+  FormControlLabel, TextField, Typography,
+  Container, Paper, Grid,
+  AppBar, Toolbar, IconButton } from '@material-ui/core/'
+import { ArrowForward, ArrowBack, ToggleOff, ToggleOn, Menu as MenuIcon } from '@material-ui/icons/'
 import { makeStyles, ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import { orange, green } from '@material-ui/core/colors'
 import 'fontsource-roboto'
@@ -23,11 +26,11 @@ const useStyles = makeStyles({
   }
 })
 
-const ButtonStyled = () => {
+const ButtonStyled = ({ text }) => {
   const classes = useStyles();
   return (
     <Button className={classes.root}>
-      Styled Button      
+      {text}
     </Button>
   )
 }
@@ -101,13 +104,23 @@ function App() {
       <Container maxWidth="lg">
         <div className="App">
           <header className="App-header">
+            <AppBar>
+              <Toolbar>
+                <IconButton>
+                  <MenuIcon />
+                </IconButton>
+                MUI Theming
+                <ButtonStyled text={"Login"}>
+                </ButtonStyled>
+              </Toolbar>
+            </AppBar>
             <Typography variant="h1" component="h1">
               Welcome to MUI
             </Typography>
             <Typography variant="h2" component="h2">
               Learning Material UI for React
             </Typography>
-            <Typography className="subtitle" variant="subtitle">
+            <Typography className="subtitle" variant="subtitle1">
               demos of some Material UI components
             </Typography>
             <Grid container spacing={3} justify="center">
@@ -160,7 +173,7 @@ function App() {
               right button
               </Button>
             </ButtonGroup>
-            <ButtonStyled />
+            <ButtonStyled text="styled button" />
             <img src={logo} className="App-logo" alt="logo" />
           </header>
         </div>
