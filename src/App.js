@@ -5,6 +5,10 @@ import { Button, ButtonGroup, Checkbox, FormControlLabel, TextField } from '@mat
 import { ArrowForward, ArrowBack, ToggleOff, ToggleOn } from '@material-ui/icons/'
 import { makeStyles, ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import { orange, green } from '@material-ui/core/colors'
+import 'fontsource-roboto'
+// import '@fontsource/acme'
+
+import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
   root: {
@@ -28,6 +32,17 @@ const ButtonStyled = () => {
 }
 
 const themeName = createMuiTheme({
+  typography: {
+    h1: {
+      fontSize: 30,
+      padding: '.5rem',
+      textTransform: 'uppercase'
+    },
+    h2: {
+      fontSize: 24,
+      padding: '.25rem',
+    }
+  },
   palette: {
     primary: {
       main: orange[500],
@@ -84,7 +99,16 @@ function App() {
     <ThemeProvider theme={themeName}>
       <div className="App">
         <header className="App-header">
-          <TextField
+          <Typography variant="h1" component="h1">
+            Welcome to MUI
+          </Typography>
+          <Typography variant="h2" component="h2">
+            Learning Material UI for React
+          </Typography>
+          <Typography variant="subtitle">
+            demos of some Material UI components
+          </Typography>
+          <TextField className='text-input'
             variant="outlined"  
             autoFocus={true}
             fullWidth={true}

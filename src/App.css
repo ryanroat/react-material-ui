@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  /* padding-top: 15px; */
 }
 
 .App-logo {
@@ -23,7 +24,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: #111;
-  padding: 0 1rem;
+  padding: .5rem 1rem;
 }
 
 .App-link {
@@ -37,4 +38,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.text-input {
+  margin: 1rem !important;
 }
