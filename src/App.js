@@ -3,8 +3,29 @@ import logo from './logo.svg';
 import './App.css';
 import { Button, ButtonGroup, Checkbox, FormControlLabel, TextField } from '@material-ui/core/'
 import { ArrowForward, ArrowBack, ToggleOff, ToggleOn } from '@material-ui/icons/'
+import { makeStyles } from '@material-ui/core/styles'
 
-import React from 'react'
+const useStyles = makeStyles({
+  root: {
+    background: 'linear-gradient(45deg, #555 30%, #999 90%)',
+    // background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+    border: 2,
+    borderRadius: 28,
+    color: 'black',
+    margin: '.5rem',
+    padding: '1rem',
+  }
+})
+
+const ButtonStyled = () => {
+  const classes = useStyles();
+  return (
+    <Button className={classes.root}>
+      Styled Button      
+    </Button>
+  )
+}
+
 
 const CheckboxExample = () => {
 
@@ -53,8 +74,8 @@ function App() {
       <header className="App-header">
         <TextField
           variant="outlined"  
-          autoFocus="true"
-          fullWidth="true"
+          autoFocus={true}
+          fullWidth={true}
           helperText="This TextField is autoFocused."
           label="outlined fullWidth TextField"
           placeholder="Type anything"
@@ -87,6 +108,7 @@ function App() {
           right button
           </Button>
         </ButtonGroup>
+        <ButtonStyled />
         <img src={logo} className="App-logo" alt="logo" />
       </header>
     </div>
