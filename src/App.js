@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Button, ButtonGroup, Checkbox, FormControlLabel } from '@material-ui/core/'
+import { Button, ButtonGroup, Checkbox, FormControlLabel, TextField } from '@material-ui/core/'
 import { ArrowForward, ArrowBack, ToggleOff, ToggleOn } from '@material-ui/icons/'
 
 import React from 'react'
@@ -51,10 +51,21 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <TextField
+          variant="outlined"  
+          autoFocus="true"
+          fullWidth="true"
+          helperText="This TextField is autoFocused."
+          label="outlined fullWidth TextField"
+          placeholder="Type anything"
+          />
+        <TextField
+          type="date"
+        />
         <CheckboxExample />
         <CheckboxIconExample />
         <Button
-          startIcon={<ArrowForward />}
+          startIcon={<ArrowForward />}    
           variant="contained"
           color="default"
           // style={{
